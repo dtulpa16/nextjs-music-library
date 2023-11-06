@@ -1,6 +1,6 @@
 "use server"
 import { revalidatePath } from "next/cache"
-import { supabase } from "../api"
+import { supabase } from "./supaBaseInit"
 import { redirect } from "next/navigation"
 export async function addSong(data:FormData){
     const title = data.get("title")

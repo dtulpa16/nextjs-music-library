@@ -1,4 +1,4 @@
-import { supabase } from "./api";
+import { supabase } from "./lib/supaBaseInit";
 import AddSongModal from "./components/AddSongModal";
 import SongList from "./components/SongList";
 import { Song } from "./lib/types";
@@ -10,10 +10,10 @@ type SongPageProps = {
 
 export default async function Home({ searchParams }: SongPageProps) {
   const showAddSongModal = searchParams?.add;
-  
+
   let { data: songs, error } = await supabase.from("songs").select("*");
   const data = songs as Song[];
-
+  if(error) throw new Error("An error occurred fetching data")
   return (
     <main className="bg-gray-100 p-5 h-screen">
       <div className="flex justify-between items-center mb-8 xl:px-72">
