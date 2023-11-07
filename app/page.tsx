@@ -1,9 +1,9 @@
 import { supabase } from "./lib/supaBaseInit";
-import AddSongModal from "./components/AddSongModal";
+import AddSongModal from "./components/Modals/AddSongModal";
 import SongList from "./components/SongList";
 import { Song } from "./lib/types";
 import Link from "next/link";
-import EditSongModal from "./components/EditSongModal";
+import EditSongModal from "./components/Modals/EditSongModal";
 
 type SongPageProps = {
   searchParams: Record<string, string> | null | undefined;
