@@ -3,6 +3,7 @@ import AddSongModal from "./components/AddSongModal";
 import SongList from "./components/SongList";
 import { Song } from "./lib/types";
 import Link from "next/link";
+import EditSongModal from "./components/EditSongModal";
 
 type SongPageProps = {
   searchParams: Record<string, string> | null | undefined;
@@ -10,10 +11,11 @@ type SongPageProps = {
 
 export default async function Home({ searchParams }: SongPageProps) {
   const showAddSongModal = searchParams?.add;
-
+  const showEditSongModal = searchParams?.edit;
+  console.log("PARAMS IN HOME",searchParams)
   let { data: songs, error } = await supabase.from("songs").select("*");
   const data = songs as Song[];
-  if(error) throw new Error("An error occurred fetching data")
+  if (error) throw new Error("An error occurred fetching data");
   return (
     <main className="bg-gray-100 p-5 h-screen">
       <div className="flex justify-between items-center mb-8 xl:px-72">
@@ -29,6 +31,7 @@ export default async function Home({ searchParams }: SongPageProps) {
       <SongList data={data} />
 
       {showAddSongModal && <AddSongModal />}
+      {showEditSongModal && <EditSongModal searchParams={searchParams}/>}
     </main>
   );
 }

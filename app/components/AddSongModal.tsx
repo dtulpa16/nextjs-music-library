@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { addSong } from "../lib/actions";
 import InputField from "./InputField";
+import CloseIcon from "./icons/CloseToHomeIcon";
 export default function AddSongModal() {
   return (
     <div
@@ -10,13 +11,7 @@ export default function AddSongModal() {
       role="dialog"
     >
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full m-4">
-        <Link
-          href={"/"}
-          className="absolute top-4 right-4 text-black text-3xl font-semibold leading-none"
-          aria-label="Close"
-        >
-          &times;
-        </Link>
+        <CloseIcon/>
         <h2 className="text-xl font-bold mb-4">Add a New Song</h2>
         <form action={addSong} className="space-y-4">
           <InputField label="Title" id="title" />
