@@ -1,6 +1,6 @@
 import React from "react";
 import { Song } from "../../lib/types";
-import { addSong } from "../../lib/actions";
+import { editSong } from "../../lib/actions";
 import InputField from "../InputField";
 import CloseIcon from "../icons/CloseToHomeIcon";
 import Modal from "./ModalLayout";
@@ -25,7 +25,7 @@ export default async function EditSongModal({ searchParams }: any) {
     <Modal>
       <CloseIcon />
       <h2 className="text-xl font-bold mb-4">Edit Song</h2>
-      <form action={addSong} className="space-y-4">
+      <form action={editSong} className="space-y-4">
         <input name="id" value={id} className=" hidden" />
         <InputField label="Title" id="title" defaultValue={title} />
         <InputField label="Artist" id="artist" defaultValue={artist} />
