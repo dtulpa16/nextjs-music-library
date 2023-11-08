@@ -13,7 +13,7 @@ export default function DeleteModal({ id }: any) {
       <p>
         Are you sure you want to delete this song? This action cannot be undone.
       </p>
-      <div className="flex justify-end space-x-4">
+      <div className="flex justify-end space-x-4 mt-3">
         <Link
           href="/"
           className="bg-gray-300 hover:bg-gray-400 text-black font-medium py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
