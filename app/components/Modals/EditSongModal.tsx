@@ -5,20 +5,15 @@ import InputField from "../InputField";
 import CloseIcon from "../icons/CloseToHomeIcon";
 import Modal from "./ModalLayout";
 
-function getSongDetails(searchParams: any) {
-  console.log(searchParams);
-  const params = {
-    id: searchParams?.id || "",
-    title: searchParams.title || "",
-    artist: searchParams.artist || "",
-    album: searchParams.album || "",
-    releaseDate: searchParams.releaseDate || "",
-    genre: searchParams.genre || "",
-  };
-  return params;
-}
+const getSongDetails = (searchParams: Partial<Song>): Song => ({
+  id: searchParams.id || "",
+  title: searchParams.title || "",
+  artist: searchParams.artist || "",
+  album: searchParams.album || "",
+  releaseDate: searchParams.releaseDate || "",
+  genre: searchParams.genre || "",
+});
 export default async function EditSongModal({ searchParams }: any) {
-  console.log(searchParams);
   const { id, title, artist, album, releaseDate, genre }: Song =
     getSongDetails(searchParams);
   return (

@@ -16,7 +16,6 @@ const InputField: React.FC<InputFieldProps> = ({ label, id, type = 'text', defau
       type={type}
       id={id}
       name={id}
-      // value={defaultValue ?  defaultValue : ""}
       defaultValue={defaultValue ?  defaultValue : ""}
       required
       className="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"

@@ -42,3 +42,13 @@ export async function editSong(data: FormData) {
   }
   redirect("/");
 }
+export async function deleteSong(data: FormData) {
+  const id = data.get("id");
+  try {
+    const { error } = await supabase.from("songs").delete().eq("id", id);
+    revalidatePath("/");
+  } catch (er) {
+    console.log(er);
+  }
+  redirect("/");
+}

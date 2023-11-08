@@ -8,7 +8,7 @@ export default function EditIcon() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      className="w-4 h-4 mt-2"
+      className="w-5 h-5 text-yellow-500"
     >
       <path
         stroke-linecap="round"

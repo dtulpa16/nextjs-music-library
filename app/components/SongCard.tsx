@@ -2,6 +2,7 @@ import React from "react";
 import { Song } from "../lib/types";
 import EditIcon from "./icons/EditIcon";
 import Link from "next/link";
+import DeleteIcon from "./icons/DeleteIcon";
 
 const SongCard: React.FC<{ song: Song }> = ({ song }) => (
   <div
@@ -15,11 +16,14 @@ const SongCard: React.FC<{ song: Song }> = ({ song }) => (
       <p className="text-gray-600">Genre: {song.genre}</p>
       <p className="text-gray-600">Release Date: {song.releaseDate}</p>
     </div>
-    <div className="absolute top-0 right-0 p-4">
+    <div className="absolute top-0 right-0 p-4 flex flex-col gap-1">
+      <Link href={`/?delete=true&id=${song.id}`}>
+        <DeleteIcon />
+      </Link>
       <Link
         href={`/?edit=true&id=${song.id}&title=${song.title}&artist=${song.artist}&album=${song.album}&releaseDate=${song.releaseDate}&genre=${song.genre}`}
       >
-        <EditIcon />{" "}
+        <EditIcon />
       </Link>
     </div>
   </div>

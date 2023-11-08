@@ -6,3 +6,6 @@ export type Song = {
     genre: string,
     releaseDate: string
 }
+export type SongPageProps = {
+    searchParams: Record<string, string> | null | undefined;
+  };
