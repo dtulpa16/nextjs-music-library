@@ -13,3 +13,12 @@
     opacity: 1;
   }
 }
+.auth-dropdown-btns {
+  display: "block";
+  padding: "10px";
+  width: "100px";
+  text-align: "left";
+  background: "none";
+  border: "none";
+  cursor: "pointer";
+}
