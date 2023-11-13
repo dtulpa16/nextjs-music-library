@@ -5,6 +5,7 @@ import { Song, SongPageProps } from "./lib/types";
 import EditSongModal from "./components/Modals/EditSongModal";
 import AddSongButton from "./components/AddSongButton";
 import DeleteModal from "./components/Modals/DeleteModal";
+import Navbar from "./components/Navbar";
 
 const fetchSongs = async () => {
   let { data: songs, error } = await supabase
@@ -27,10 +28,7 @@ export default async function Home({ searchParams }: SongPageProps) {
   if (error) throw new Error("An error occurred fetching data");
   return (
     <main className="bg-gray-100 p-5 h-screen">
-      <div className="flex justify-between items-center mb-8 xl:px-72">
-        <h1 className="text-3xl font-bold text-gray-900">Music Library</h1>
-        <AddSongButton />
-      </div>
+      <Navbar />
 
       <SongList data={data} />
 
