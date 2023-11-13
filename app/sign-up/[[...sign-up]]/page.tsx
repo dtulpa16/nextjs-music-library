@@ -4,7 +4,7 @@ import { SignUp } from "@clerk/nextjs";
 
 export default function Page() {
   return (
-    <div className="flex justify-center items-center h-screen lg:-mt-24 -mt-16 w-11/12 mx-auto">
+    <div className="flex justify-center items-center h-screen lg:-mt-32 -mt-24 w-11/12 mx-auto">
       <SignUp
         appearance={{
           baseTheme: neobrutalism,

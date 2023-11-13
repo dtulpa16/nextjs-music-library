@@ -9,9 +9,13 @@ export default function Navbar() {
   const { user, isLoaded } = useUser();
   return (
     <div className="flex justify-between items-center mb-8 xl:px-72 pb-4">
-      <h1 className="text-3xl font-bold text-gray-900">Music Library</h1>
-      <UserButton afterSignOutUrl="/" />
-      {isLoaded && user ? <AddSongButton /> : <AuthDropdownButton />}
+      <div>
+        <h1 className="xl:text-3xl text-2xl font-bold text-gray-900">Music Library</h1>
+      </div>
+      <div className="flex gap-2 items-center">
+        {isLoaded && user ? <AddSongButton /> : <AuthDropdownButton />}
+        <UserButton afterSignOutUrl="/" />
+      </div>
     </div>
   );
 }

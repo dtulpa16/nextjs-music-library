@@ -2,7 +2,9 @@
 import { revalidatePath } from "next/cache";
 import { supabase } from "./supaBaseInit";
 import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs";
 export async function addSong(data: FormData) {
+  const {userId} = auth();
   const title = data.get("title");
   const artist = data.get("artist");
   const album = data.get("album");
@@ -16,6 +18,7 @@ export async function addSong(data: FormData) {
         album: album,
         releaseDate: releaseDate,
         genre: genre,
+        userId: userId
       },
     ]);
     revalidatePath("/");
