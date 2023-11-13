@@ -3,7 +3,6 @@ import AddSongModal from "./components/Modals/AddSongModal";
 import SongList from "./components/SongList";
 import { Song, SongPageProps } from "./lib/types";
 import EditSongModal from "./components/Modals/EditSongModal";
-import AddSongButton from "./components/AddSongButton";
 import DeleteModal from "./components/Modals/DeleteModal";
 import Navbar from "./components/Navbar";
 
@@ -27,9 +26,7 @@ export default async function Home({ searchParams }: SongPageProps) {
   const { data, error } = await fetchSongs();
   if (error) throw new Error("An error occurred fetching data");
   return (
-    <main className="bg-gray-100 p-5 h-screen">
-      <Navbar />
-
+    <main>
       <SongList data={data} />
 
       {showAddSongModal && <AddSongModal />}
